@@ -11,4 +11,4 @@ A simple Neural Network Model to classify Dogs and Cats.
 It contains 12,501 RBG images of cats and dogs.
 2. Test Dataset can be downloaded from the internet.
 
-NOTE: The pickle files are not included in this repositiories.
+NOTE: The pickle and the Dataset files are not included in this repositiories.
