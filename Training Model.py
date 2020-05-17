@@ -13,26 +13,25 @@ y = pickle.load(open("y.pickle", "rb"))
 
 X = X/255.0
 
-#model = Sequential()
-#
-#model.add(Conv2D(256, (3,3), input_shape = X.shape[1:]) )
-#model.add(Activation("relu"))
-#model.add(MaxPooling2D(pool_size=(2,2)))
-#
-#model.add(Conv2D(64, (3,3)))
-#model.add(Activation("relu"))
-#model.add(MaxPooling2D(pool_size=(2,2)))
-#
-#model.add(Conv2D(64, (3,3)))
-#model.add(Activation("relu"))
-#model.add(MaxPooling2D(pool_size=(2,2)))
-#
-#model.add(Flatten())
-#
-#model.add(Dense(1)) 
-#model.add(Activation("sigmoid"))
+model = Sequential()
 
-model = tf.keras.models.load_model('Model_1(2_conv(64,64)+0_Dense+Last_Dense)')
+model.add(Conv2D(256, (3,3), input_shape = X.shape[1:]) )
+model.add(Activation("relu"))
+model.add(MaxPooling2D(pool_size=(2,2)))
+
+model.add(Conv2D(64, (3,3)))
+model.add(Activation("relu"))
+model.add(MaxPooling2D(pool_size=(2,2)))
+
+model.add(Conv2D(64, (3,3)))
+model.add(Activation("relu"))
+model.add(MaxPooling2D(pool_size=(2,2)))
+
+model.add(Flatten())
+
+model.add(Dense(1)) 
+model.add(Activation("sigmoid"))
+
 
 model.compile(loss="binary_crossentropy",    #  binary_crossentropy
               optimizer="adam",
@@ -42,4 +41,4 @@ model.fit(X, y, batch_size=100, validation_split=0.10, epochs = 5, callbacks = [
 
 model.save("Model_2(2_conv(64,64)+0_Dense+Last_Dense)") 
 
-## classifier-6 (10 epochs) : main-conv + 2-conv(64,64) + 0-Dense + main-dense (Good Classifier)
+

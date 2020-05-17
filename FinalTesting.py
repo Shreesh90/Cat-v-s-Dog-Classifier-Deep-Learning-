@@ -8,7 +8,7 @@ y_test = pickle.load(open("y_test.pickle", "rb"))
 
 X_test = X_test/255.0
 
-classifier = keras.models.load_model('Model_2(2_conv(64,64)+0_Dense+Last_Dense)')
+classifier = keras.models.load_model('Model_1(2_conv(64,64)+0_Dense+Last_Dense)')
 
 test_loss, test_accuracy = classifier.evaluate(X_test, y_test, verbose=2)
 

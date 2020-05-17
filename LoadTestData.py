@@ -26,7 +26,7 @@ def create_test_data():
                 pass
 
 create_test_data()
-#print(len(testing_data))
+
 
 random.shuffle(testing_data)
 
@@ -40,20 +40,11 @@ for feature, label in testing_data:
 
 X_test = np.array(X_test).reshape([-1, IMG_SIZE, IMG_SIZE, 1])
 y_test = np.array(y_test)
-#print(X_test[1])
-#print(testing_data[1][0])
-
-#plt.imshow(testing_data[0][0], cmap="gray")
-#plt.show()
-#X_test = X_test/255.0
-#plt.imshow(testing_data[0][0], cmap="gray")
-#plt.show()
 
 pickle.dump(testing_data, open("testing_data.pickle", "wb"))
 pickle.dump(X_test, open("X_test.pickle", "wb"))
 pickle.dump(y_test, open("y_test.pickle", "wb"))
 
-##==================================##
 
 
 
