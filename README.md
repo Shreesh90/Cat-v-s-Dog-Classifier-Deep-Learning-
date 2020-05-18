@@ -8,7 +8,7 @@ A simple Neural Network Model to classify Dogs and Cats.
 3. (Optional)Tensorboard to track the training of the model
 # Datasets
 1. Training Dataset download link - https://www.microsoft.com/en-us/download/details.aspx?id=54765
-It contains 12,501 RBG images of cats and dogs.
+It contains 12,501 RBG images of cats and dogs each.
 2. Test Dataset can be downloaded from the internet.
 
-NOTE: The pickle and the Dataset files are not included in this repositiories.
+NOTE: The pickle and the Dataset files are not included in this repositiory.
