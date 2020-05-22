@@ -42,8 +42,8 @@ X_test = np.array(X_test).reshape([-1, IMG_SIZE, IMG_SIZE, 1])
 y_test = np.array(y_test)
 
 pickle.dump(testing_data, open("testing_data.pickle", "wb"))
-pickle.dump(X_test, open("X_test.pickle", "wb"))
-pickle.dump(y_test, open("y_test.pickle", "wb"))
+pickle.dump(X_test, open("X_test2.pickle", "wb"))
+pickle.dump(y_test, open("y_test2.pickle", "wb"))
 
 
 

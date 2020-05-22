@@ -1,6 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Flatten, Dense, Activation, Conv2D, MaxPooling2D
+from tensorflow.keras.layers import Flatten, Dense, Activation, Conv2D, MaxPooling2D, Dropout
 import pickle
 from tensorflow.keras.callbacks import TensorBoard
 import time
@@ -19,10 +19,12 @@ model.add(Conv2D(256, (3,3), input_shape = X_train.shape[1:]) )
 model.add(Activation("relu"))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
+model.add(Dropout(0.2, input_shape = X_train.shape[1:]))
 model.add(Conv2D(64, (3,3)))
 model.add(Activation("relu"))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
+model.add(Dropout(0.2, input_shape = X_train.shape[1:]))
 model.add(Conv2D(64, (3,3)))
 model.add(Activation("relu"))
 model.add(MaxPooling2D(pool_size=(2,2)))
@@ -36,8 +38,9 @@ model.compile(loss="binary_crossentropy",    #  binary_crossentropy
               optimizer="adam",
               metrics=['accuracy'])
 
-model.fit(X_train, y_train, batch_size=100, validation_split=0.10, epochs = 15, callbacks = [tensorboard])
 
-model.save("Model_3(2_conv(64,64)+0_Dense+Last_Dense)") 
+model.fit(X_train, y_train, batch_size=100, validation_split=0.10, epochs = 5, callbacks = [tensorboard])
+
+model.save("Model_5(2_conv(64,64)+0_Dense+Last_Dense)") 
 
 
