@@ -1,4 +1,7 @@
 PetImages/
 TestData/
+<<<<<<< HEAD
 LoadTestData.py
+=======
+>>>>>>> Dropout
 *.pickle
